@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Node/NodeActor.h"
+#include "NodeActor.h"
 
 // Sets default values
 ANodeActor::ANodeActor()
