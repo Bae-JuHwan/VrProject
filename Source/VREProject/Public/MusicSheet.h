@@ -40,6 +40,7 @@ public:
 
     UFUNCTION(BlueprintImplementableEvent)
     int32 CallFireNode(int32 NodeNum);
+
 	UFUNCTION(BlueprintCallable)
 	virtual void Sheet();
 

@@ -25,10 +25,10 @@ void AMusicSheet::Tick(float DeltaTime)
 
 }
 
-int32 AMusicSheet::CallFireNode(int32 NodeNum)
-{
-	return NodeNum;
-}
+//int32 AMusicSheet::CallFireNode(int32 NodeNum)
+//{
+//	return NodeNum;
+//}
 
 void AMusicSheet::Sheet()
 {
