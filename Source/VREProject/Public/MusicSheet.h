@@ -10,10 +10,6 @@ USTRUCT(BlueprintType)
 struct FNode
 {
 	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float Time;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<int32> NodeNums; // 동시에 누를 노드들
 };
@@ -41,40 +37,38 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     int32 CallFireNode(int32 NodeNum);
 
-	UFUNCTION(BlueprintCallable)
-	virtual void Sheet();
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    TArray<int32> DrumNode;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FNode> Anode;
-
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TArray<FNode> SimpleDrumSheet = {
         // 1마디
-        {0.0f,    {0}},          // 킥
-        {1.0f,    {1}},          // 스네어
-        {2.0f,    {0}},          // 킥
-        {3.0f,    {1}},          // 스네어
+        { {0}},          // 킥
+        {   {1}},          // 스네어
+        {   {0}},          // 킥
+        {    {1}},          // 스네어
 
         // 2마디
-        {4.0f,    {0}},
-        {5.0f,    {1}},
-        {6.0f,    {0}},
-        {7.0f,    {1}},
+        {  {0}},
+        {   {1}},
+        {   {0}},
+        {  {1}},
 
         // 3마디 (마찬가지 패턴 반복)
-        {8.0f,    {0}},
-        {9.0f,    {1}},
-        {10.0f,   {0}},
-        {11.0f,   {1}},
+        {   {0}},
+        {   {1}},
+        {   {0}},
+        {   {1}},
 
         // 중간의 하이햇+스네어(동시 타격, 아래쪽 박자)
-        {12.0f,   {0,2}},        // 킥+하이햇
-        {12.5f,   {2}},          // 하이햇
-        {13.0f,   {1,2}},        // 스네어+하이햇
-        {13.5f,   {2}},          // 하이햇
-        {14.0f,   {0,2}},        // 킥+하이햇
-        {14.5f,   {2}},          // 하이햇
-        {15.0f,   {1,2}},        // 스네어+하이햇
-        {15.5f,   {2}},          // 하이햇
+        {   {0,2}},        // 킥+하이햇
+        {   {2}},          // 하이햇
+        {  {1,2}},        // 스네어+하이햇
+        {  {2}},          // 하이햇
+        {   {0,2}},        // 킥+하이햇
+        {  {2}},          // 하이햇
+        {  {1,2}},        // 스네어+하이햇
+        {  {2}},          // 하이햇
 
         // 마지막 박자 등등
     };

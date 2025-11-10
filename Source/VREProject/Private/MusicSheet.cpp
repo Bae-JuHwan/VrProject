@@ -15,7 +15,6 @@ AMusicSheet::AMusicSheet()
 void AMusicSheet::BeginPlay()
 {
 	Super::BeginPlay();
-	Sheet();
 }
 
 // Called every frame
@@ -30,15 +29,5 @@ void AMusicSheet::Tick(float DeltaTime)
 //	return NodeNum;
 //}
 
-void AMusicSheet::Sheet()
-{
-	for (const FNode& node : SimpleDrumSheet){
-		for (const int& i : node.NodeNums)
-		{
-			CallFireNode(i);
-		}
-		// 2. 노드 기다려야 하는 시간만큼 대기
-		FPlatformProcess::Sleep(node.Time); // (테스트용, 슬립은 실제 게임에선 사용 권장X)
-	}
-}
+
 
