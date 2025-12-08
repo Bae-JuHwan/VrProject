@@ -26,6 +26,3 @@ Build/
 
 # Mac 시스템 파일 제외
 .DS_Store
-
-# 추가: Visual Studio 솔루션 파일 제외
-VREProject.sln
